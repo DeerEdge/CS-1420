@@ -24,9 +24,9 @@ public class TimeCalculation
         System.out.print(uID);
         System.out.print(" seconds is ");
         System.out.print(totalHours);
-        System.out.print(" hours(s), ");
+        System.out.print(" hour(s), ");
         System.out.print(totalMinutes);
-        System.out.print(" minutes(s), and ");
+        System.out.print(" minute(s), and ");
         System.out.print(totalSeconds);
         System.out.print(" second(s).");
     }
