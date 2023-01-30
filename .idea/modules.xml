@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Assignments/Assignments.iml" filepath="$PROJECT_DIR$/Assignments/Assignments.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/CS-1420-Spring-2023.iml" filepath="$PROJECT_DIR$/.idea/CS-1420-Spring-2023.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exam Preparation/Exam Preparation.iml" filepath="$PROJECT_DIR$/Exam Preparation/Exam Preparation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Labs/Labs.iml" filepath="$PROJECT_DIR$/Labs/Labs.iml" />
     </modules>
   </component>
