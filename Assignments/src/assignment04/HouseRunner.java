@@ -6,7 +6,7 @@ import java.awt.Color;
 public class HouseRunner {
     public static void main(String[] args){
         JFrame frame = new JFrame();
-        frame.setSize(700,700);
+        frame.setSize(800,800);
         frame.setTitle("House");
         //HSB Color applied to background
         frame.getContentPane().setBackground(new Color(134, 169, 231, 255));
