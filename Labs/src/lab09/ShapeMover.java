@@ -17,10 +17,12 @@ public class ShapeMover extends JPanel implements MouseListener,
 {
     // Instance variables.
     
-    Rect[] shapes;
+    Rect[] rects;
+    Circle[] circles;
 
     int lastX, lastY;
     Rect current;
+    Circle currentCircle;
 
     /**
      * Initialize this (our JPanel).  Create the shapes, and
@@ -31,7 +33,7 @@ public class ShapeMover extends JPanel implements MouseListener,
     {
     	// Make the shapes.
     	
-    	shapes = new Rect[]
+    	rects = new Rect[]
     	    {
     	       new Rect    (130,  40,  60, 40, Color.RED),
                new Rect    (230,  40,  20, 50, Color.BLUE),
@@ -39,6 +41,14 @@ public class ShapeMover extends JPanel implements MouseListener,
                new Rect    (130, 140, 100, 100, new Color (0.8f, 0.6f, 0.2f)),
     	       new Rect    ( 30, 140,  40, 10, Color.YELLOW)
     	    };
+
+        circles = new Circle[]
+                {
+                        new Circle    (290,  360,  60, Color.RED),
+                        new Circle    (430,  140, 50, Color.BLUE),
+                        new Circle    (260,  180,  100, Color.YELLOW),
+                        new Circle    (290,  140, 20, Color.GREEN),
+                };
     
     	// Set the size of this panel.
     	
@@ -69,8 +79,11 @@ public class ShapeMover extends JPanel implements MouseListener,
     	
     	// Draw all of the shapes.
     	
-    	for (Rect s : shapes)
+    	for (Rect s : rects)
     	    s.draw(g);
+
+        for (Circle c : circles)
+            c.draw(g);
     }
 
     /**
@@ -102,9 +115,13 @@ public class ShapeMover extends JPanel implements MouseListener,
     	// Determine if the mouse click is within any shape.
     	//   If so, save the shape as the current shape.
     
-    	for (Rect s : shapes)
+    	for (Rect s : rects)
     	    if (s.isInside (x, y))
     	        current = s;
+
+        for (Circle c : circles)
+            if (c.isInside (x, y))
+                currentCircle = c;
     }
     
     /**
@@ -123,6 +140,7 @@ public class ShapeMover extends JPanel implements MouseListener,
     public void mouseReleased (MouseEvent e) 
     {
         current = null;
+        currentCircle = null;
     }
     
     /**
@@ -160,6 +178,12 @@ public class ShapeMover extends JPanel implements MouseListener,
     		current.move (deltaX, deltaY); 
     		repaint ();
     	}
+
+        if (currentCircle != null)
+        {
+            currentCircle.move (deltaX, deltaY);
+            repaint ();
+        }
     }
 
     // Unused event methods (required by the interfaces).
